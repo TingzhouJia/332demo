@@ -1,0 +1,149 @@
+.donate-content{
+	background: linear-gradient(#e66465, #9198e5);
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:hover{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.column__row{
+	background: #FFFFFF;
+	display: flex;
+	border-radius: 10px;
+	padding: 2vw;
+	width: 50vw;
+	flex-direction: column;
+	margin-bottom: 2vw;
+}
+.donate_header_1{
+	display: flex !important;
+	flex-direction: column;
+}
+.donor{
+	margin-right: 2vw;
+	padding: 1vw;
+	background-color: #FEC13E;
+	font-size: 1.5rem;
+}
+.donate_header {
+	display: flex !important;
+	justify-content: space-between;
+	flex-direction: row;
+	background: #0076bb;
+	font-family: Source Sans Pro,Arial,Helvetica Neue,Helvetica,sans-serif;
+	font-weight: 700;
+	padding-bottom: .88889rem;
+	padding-top: .88889rem;
+	position: sticky !important;
+	margin: 0;
+	top:0;
+	opacity: 0.9;
+	color: #FFFFFF;
+	
+	
+	
+	padding-left: 1vw;
+}
+.donate-header-t1{
+	font-size: 2rem;
+}
+.donation-preamble__donation-type-choice{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.donate-block{
+	font-size: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-left: 1vw;
+	width: 35%;
+	color: #FFFFFF;
+	margin-bottom: 20px;
+	background: #0076BB;
+	height: 20vh;
+	border-radius: 5%;
+}
+.money_options{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+  
+}
+.money-option{
+	background: #0076BB;
+	border-radius: 5%;
+	color: #FFFFFF;
+	width: 10vw;
+	height: 5vw;
+	font-weight: 600;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+}
+.momney_hover{
+	background-color: #FEC13E;
+}
+.self_money{
+	margin-top: 2vw;
+	opacity:0;
+	height: 2vw !important;
+}
+.dor_item{
+	margin-bottom: 1vw;
+}
+#ProcessForm{
+	display: flex;
+	flex-direction: column;
+	color: #0076BB;
+}
+.dor_title{
+	margin-top: 1vw;
+}
+.user_select{
+	margin-top: 1vw;
+	display: flex;
+	flex-direction: column;
+}
+.credit{
+	display: flex;
+	flex-direction: column;
+	
+}
+
+@media (max-width:1000px){
+	.donate-content{
+		justify-content: center;
+	}
+	.column__row{
+		
+		min-width: 70vw;
+		margin: 0;
+	}
+}
+@media (max-width:375px) {
+	.donate-content{
+		justify-content: center;
+	}
+	.column__row{
+		display: flex;
+		min-width: 90vw;
+		
+	}
+}
+@media (min-width:1000px)  {
+	.column__row{
+		margin-left: 10vw;
+	}
+}

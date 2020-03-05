@@ -1,0 +1,37 @@
+
+.footer__column{
+	 color: #fff;
+	width: 22vw;
+}
+.footer{
+	background-color: #0076bb;
+    color: #fff;
+    font-family: Source Sans Pro,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-size: .83333rem;
+    line-height: 1.27778rem;
+    padding: 2.77778rem 0 0;
+	margin: 0;
+}
+.footer a{
+	 color: #fff;
+}
+.footer__row{
+	display: flex;
+	justify-content: space-around;
+}
+.footer__map{
+	max-width: 100%;
+}
+	
+@media (max-width:375px) {
+	.footer__row{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	.footer__column{
+		 color: #fff;
+		width: 90vw;
+		margin-left: 5vw;
+	}
+}

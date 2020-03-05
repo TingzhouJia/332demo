@@ -1,0 +1,44 @@
+.animal-profile{
+    border: 1px solid #0076bb;
+    padding: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+.animal-profile__info{
+    margin-left: 2vw;
+}
+.animal-profile__info__top{
+    flex: 2;
+    margin-bottom: 2vw;
+}
+.animal-profile__info__bottom{
+    flex: 1;
+   
+   
+}
+.animal-profile__buttons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+   
+   
+}
+.button-link{
+    border: 1px solid #0076bb;
+    box-shadow: 3px 3px #eeeeee;
+    width: 15vw;
+    text-align: center;
+}
+
+.adopt_form{
+   display: none;
+}
+.adoptAnimal_form{
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    
+}
+.form_item{
+    margin-bottom: 1vw;
+}

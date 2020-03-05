@@ -1,0 +1,57 @@
+.banner__wrap{
+    position: relative;
+}
+.banner__content{
+    position: absolute;
+    bottom: 2vw;
+    left: 2vw;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,.5);
+    color: #ffffff;
+}
+.tile__title{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.page__body{
+    font-family: Source Sans Pro,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.tile__wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.page_p{
+    padding: 2vw;
+    box-shadow: 3px 3px #eeeeee;
+}
+.tile{
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    width: 30vw;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: .88889rem;
+    margin-top: .88889rem;
+}
+.tile__link:hover{
+    text-decoration: none;
+}
+img{
+    height: auto;
+    max-width: 100%;
+}
+
+.tile__img{
+    width: 100%;
+}
