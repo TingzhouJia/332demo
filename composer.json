@@ -1,0 +1,17 @@
+{
+    "name": "tingzhoujia/spca",
+    "description": "this is 332 project",
+    "type": "project",
+    "require": {
+        "twig/twig": "^2.12",
+        "smarty/smarty": "~3.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TingzhouJia",
+            "email": "joe.tzjia@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

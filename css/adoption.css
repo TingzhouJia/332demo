@@ -1,0 +1,29 @@
+.page__content{
+    padding: 3vw;
+}
+.banner{
+    position: relative;
+}
+.banner1__content{
+    position: absolute;
+    bottom: 2vw;
+    color: white;
+    left:2vw;
+    text-shadow: 2px 2px 5px rgba(0,0,0,.5);;
+}
+.animal-filter__form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 2vw;
+}
+.animal-filter__form__file>select{
+    width: 10vw;
+
+}
+.animal-list__content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

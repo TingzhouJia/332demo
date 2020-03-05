@@ -1,0 +1,62 @@
+.banner__wrap {
+    position: relative;
+}
+.banner__content{
+    position: absolute;
+    left: 2vw;
+    
+    bottom: 1vw;
+}
+.banner__title{
+    text-shadow: 2px 2px 5px rgba(0,0,0,.5);
+    font-size: 4rem;
+    color: #ffffff;
+}
+.volunteer_body{
+    display: flex;
+    flex-direction: row;
+    padding: 4vw;
+}
+.branch_list{
+    flex: 2;
+   margin-right: 2vw;
+    color: #0076bb;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+ul li {
+    list-style: none;
+}
+.branch_list_large_title{
+    font-size: larger;
+    margin-bottom: 1vw;
+}
+.branch_list_title{
+    font-size: large;
+}
+.volunteer_list {
+
+    display: flex;
+    flex-direction: column;
+    flex:5;
+}
+.volunteer_h3{
+    font-size: 4rem;
+}
+#filter_list{
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 3vw;
+}
+.filter_item{
+    margin-right: 1vw;
+}
+.filter_form_btn{
+    width: 10vw;
+    border-radius: 5%;
+    color: #ffffff;
+}

@@ -1,0 +1,54 @@
+.donor_body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2vw;
+}
+.show_list{
+    display: flex;
+    flex-direction: row;
+   
+}
+.donor_select{
+    width: 30vw;
+    margin-bottom: 1vw;
+}
+.show_form{
+    flex: 2;
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+.show_content{
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.show_circle{
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+    box-shadow: 4px 4px #eeeeee;
+}
+.donor_list{
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+.find_donor{
+   
+    display: flex;
+    flex-direction: column;
+   
+}
+.form_donor{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1vw;
+}
