@@ -3,7 +3,7 @@ CREATE TABLE Organization (
 address VARCHAR(40) NOT NULL,
 phone_number VARCHAR(15) NOT NULL, 
 name VARCHAR(40) NOT NULL, 
-/*typeOfOrganization will demonstrate whether it is a rescue organization or SPCA*/
+/*typeOfOrganization will demonstrate whether it is a rescue organization, shelter or SPCA*/
 typeOfOrganization VARCHAR(40) NOT NULL, 
 PRIMARY KEY(name)
 );
@@ -52,7 +52,7 @@ FOREIGN KEY (location) REFERENCES Organization(name)
 );
 
 CREATE TABLE MoneyTransaction (
-payment_id VARCHAR(20) NOT NULL, 
+payment_id INT NOT NULL AUTO_INCREMENT, 
 payee VARCHAR(15) NOT NULL, 
 payer VARCHAR(15) NOT NULL, 
 amount INT NOT NULL, 
@@ -60,17 +60,20 @@ dateOfTransaction DATETIME NOT NULL,
 /*type of transaction could be movement, adoption or donation*/
 typeOfTransaction VARCHAR(15) NOT NULL, 
 PRIMARY KEY(payment_id), 
-FOREIGN KEY (payee) REFERENCES Organization(name) 
+FOREIGN KEY (payee) REFERENCES Organization(name)
 );
 
 CREATE TABLE Movement ( 
-payment_id INT AUTO_INCREMENT NOT NULL, 
+payment_id INT NOT NULL, 
 driver VARCHAR(10) NOT NULL, 
-departure VARCHAR(20) NOT NULL, 
-destination VARCHAR(20) NOT NULL, 
+departure VARCHAR(40) NOT NULL, 
+destination VARCHAR(40) NOT NULL, 
 animal_id INT NOT NULL, 
-PRIMARY KEY(payment_id), 
-FOREIGN KEY (driver) REFERENCES Driver(name) ON DELETE CASCADE, 
+PRIMARY KEY(payment_id),
+FOREIGN KEY (payment_id) REFERENCES MoneyTransaction(payment_id) ON DELETE CASCADE, 
+FOREIGN KEY (driver) REFERENCES Driver(name) ON DELETE CASCADE,
+FOREIGN KEY (departure) REFERENCES Organization(name) ON DELETE CASCADE,
+FOREIGN KEY (destination) REFERENCES Organization(name) ON DELETE CASCADE,
 FOREIGN KEY (animal_id) REFERENCES Animal(animal_id) 
 );
 
@@ -89,10 +92,8 @@ CREATE TABLE AdoptedList (
 name_adopter VARCHAR(15) NOT NULL,
 address VARCHAR(40) NOT NULL, 
 phone_number VARCHAR(15) NOT NULL, 
-amount INT NOT NULL, 
 animal_id INT NOT NULL, 
-payment_id VARCHAR(20) NOT NULL, 
-PRIMARY KEY(animal_id), 
-FOREIGN KEY (animal_id) REFERENCES Animal(animal_id), 
+payment_id INT NOT NULL, 
+PRIMARY KEY(animal_id),  
 FOREIGN KEY (payment_id) REFERENCES MoneyTransaction(payment_id) 
 );
