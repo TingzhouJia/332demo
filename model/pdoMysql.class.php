@@ -233,7 +233,7 @@ class PdoMySQL{
 
 	public static function parseFields($fields){
 		if(is_array($fields)){
-			array_walk($fields,array('PdoMySQL','addSpecialChar'));
+			//array_walk($fields,array('PdoMySQL','addSpecialChar'));
 			$fieldsStr=implode(',',$fields);
 		}elseif(is_string($fields)&&!empty($fields)){
 			if(strpos($fields,'`')===false){
