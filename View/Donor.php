@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include "../Config/otherConfig.php" ?>
+    <?php include "../Config/otherConfig.php"; ?>
+    
     <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/donor.css" />
     <title>Donor</title>
 </head>
