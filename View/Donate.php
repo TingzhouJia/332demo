@@ -6,6 +6,7 @@
 	<title>Donate</title>
 	<link rel="stylesheet" type="text/css" href="http://192.168.64.2/SPCA/css/donate.css" />
 	<?php include "../Config/otherConfig.php" ?>
+	<?php include '../Controller/fetchAllOrganization.php'; ?>
 	<script>
 		var jq = $.noConflict();
 		let money = 0;
@@ -87,7 +88,7 @@
 			</div>
 		</div>
 		<div class="column__row">
-			<form name="process" id="ProcessForm" action="Controller/donate_form.php" method="post">
+			<form name="process" id="ProcessForm" action="http://192.168.64.2/SPCA/Controller/donate_form.php" method="post">
 				<fieldset>
 					<div class="select_money">
 						<h5>Select Gift Amount (CDN funds):</h5>
@@ -103,16 +104,18 @@
 							<div id="money_opt" value="500" class="money-option">$500</div>
 							<div id="money_opt" value="1000" class="money-option">$1000</div>
 							<div id="money_opt" value="other" class="money-option">Others</div>
-							<input id="money_submit" placeholder="money" class="self_money" type="text" name="other_val" />
+							<input id="money_submit" placeholder="money" class="self_money" type="text" name="other_val" required />
 						</div>
 
 					</div>
 					<div class="user_select">
 						<h2>Designate my gift</h2>
 						<label>I wish my gift to support</label>
-						<select required>
-							<option>choose a shelter or branch to donate</option>
-							<option>1</option>
+						<select name="branch_select" required>
+							<option >choose a shelter or branch to donate</option>
+							<?php foreach($organization->organizationSelectList as $ele): ?>
+							<option value=<?php echo $ele["name"]; ?>><?php echo $ele["name"]; ?></option>
+							<?php endforeach; ?>
 						</select>
 						<h3 class="dor_title">Donor Information</h3>
 						<div class="dor_item">
@@ -134,7 +137,7 @@
 						</p>
 					</div>
 				</fieldset>
-				<input type="submit" value="submit" onclick="deny_submit()" />
+				<input type="submit" class="btn-primary" value="submit" onclick="deny_submit()" />
 			</form>
 			<div class="payment_select">
 				<ul class="nav nav-tabs" id="myTab" role="tablist">

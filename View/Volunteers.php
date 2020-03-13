@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/volunteer.css" />
-    <?php include "otherConfig.php" ?>
+    <?php include "../Config/otherConfig.php" ?>
     <title>Document</title>
 </head>
 

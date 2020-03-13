@@ -8,23 +8,26 @@
 	flex-wrap: wrap;
 	
 }
-.btn-primary{
-	border-radius: 15% !important;
+.mybtn{
+	border-radius: 5% !important;
+	height: 4vw;
+	width: 8vw;
 	color: #0076bb !important;
 }
 .gallery-img{
 	display: flex;
 	flex: 1;
-	width:33.3vw;
-	height:200px;
+	width:400px;
+	height: 300px ;
 	position: relative;
 }
-.gal_750{
-		display: flex;
-		
-	}
+
+.event_each_item{
+	margin-bottom: 5vw;
+}
 .gallery-img>img{
 	width:100%;
+	height: 100%;
 }
 
 .gallery_btn{
