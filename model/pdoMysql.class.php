@@ -1,11 +1,11 @@
 <?php
-define("DB_HOST",'localhost');
-define("DB_USER",'root');
-define('DB_PWD','123456');
-define('DB_NAME','332demo');
-define('DB_PORT','3306');
-define('DB_TYPE','mysql');
-define('DB_CHARSET','utf8');
+$DB_HOST='localhost';
+$DB_USER='root';
+$DB_PWD='123456';
+$DB_NAME='332demo';
+$DB_PORT='3306';
+$DB_TYPE='mysql';
+$DB_CHARSET='utf8';
 
 class PdoMySQL{
 	public static $config=array();
@@ -22,18 +22,25 @@ class PdoMySQL{
 	 * @return boolean
 	 */
 	public function __construct($dbConfig=''){
+		global $DB_HOST;
+global $DB_USER ;
+global $DB_PWD;
+global $DB_NAME;
+global $DB_PORT;
+global $DB_TYPE;
+global $DB_CHARSET;
 		if(!class_exists("PDO")){
 			self::throw_exception('no support');
 		}
 		if(!is_array($dbConfig)){
 			$dbConfig=array(
-					'hostname'=>DB_HOST,
-					'username'=>DB_USER,
-					'password'=>DB_PWD,
-					'database'=>DB_NAME,
-					'hostport'=>DB_PORT,
-					'dbms'=>DB_TYPE,
-					'dsn'=>DB_TYPE.":host=".DB_HOST.";dbname=".DB_NAME
+					'hostname'=>$DB_HOST,
+					'username'=>$DB_USER,
+					'password'=>$DB_PWD,
+					'database'=>$DB_NAME,
+					'hostport'=>$DB_PORT,
+					'dbms'=>$DB_TYPE,
+					'dsn'=>$DB_TYPE.":host=".$DB_HOST.";dbname=".$DB_NAME
 			);
 		}
 		if(empty($dbConfig['hostname']))self::throw_exception('not setup yet');
@@ -54,7 +61,7 @@ class PdoMySQL{
 				self::throw_exception('wrong conect');
 				return false;
 			}
-			self::$link->exec('SET NAMES '.DB_CHARSET);
+			self::$link->exec('SET NAMES '.$DB_CHARSET);
 			self::$connected=true;
 			unset($configs);
 		}
@@ -315,6 +322,13 @@ class PdoMySQL{
 	}
 
 }
-$MyPDO=new PdoMySQL();
-return $MyPDO;
+$MyPDO=new PdoMySQL;
+	// define(");
+// define('DB_PWD','123456');
+// define('DB_NAME','332demo');
+// define('DB_PORT','3306');
+// define('DB_TYPE','mysql');
+// define('DB_CHARSET','utf8');
+
+
 ?>

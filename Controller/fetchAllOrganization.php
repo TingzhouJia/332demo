@@ -1,5 +1,5 @@
 <?php
-include "../model/pdoMysql.class.php";
+require_once "../model/pdoMysql.class.php";
 
 
 

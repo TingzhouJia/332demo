@@ -21,11 +21,13 @@
 }
 .show_content{
     display: flex;
-    flex: 2;
+    padding: 1vw;
+    flex: 3;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
+
 .show_circle{
     border-radius: 50%;
     width: 10vw;
