@@ -15,15 +15,27 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     margin-bottom: 2vw;
 }
-.animal-filter__form__file>select{
-    width: 10vw;
+.animal{
+    border: 1px solid #29aae2;
+    padding: 2vw;
+    margin-bottom: 2vw;
+}
 
+.animal__info{
+    margin-top: 2vw;
 }
 .animal-list__content{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+.animal__info__value{
+    font-size: large;
+}
+.animal__info__label{
+    font-weight: 700;
 }
