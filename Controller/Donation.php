@@ -16,7 +16,7 @@ function findDonorYear($year){
 //get donation for donor
 function findDonor($name){
     global $MyPDO;
-    return  $MyPDO::find("MoneyTransaction","payer like '%".$name."%' and ".$GLOBALS['typeDonation']);
+    return  $MyPDO::find("MoneyTransaction","payer like '".$name."%' and ".$GLOBALS['typeDonation']);
        
 }
 //get donor for diff years

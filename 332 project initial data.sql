@@ -27,18 +27,25 @@ INSERT INTO Driver VALUES('Lowry', 6135124321, 'KYLE07', 654321, 'Rescuer');
 INSERT INTO Driver VALUES('Butler', 6133488516, 'JIMM22', 098765, 'AnotherRescuer');
 INSERT INTO Driver VALUES('Booker', 1323958086, 'DEVN01', 567890, 'AnotherRescuer');
 /*animal*/
-INSERT INTO Animal VALUES(1, 'dog', 'PetsHome','https://ospca-mym-prod.imgix.net/images/photos/animals/225355/151387.jpg', '2018-03-30', 100);
-INSERT INTO Animal VALUES(2, 'cat', 'AnotherPetsHome','https://ospca-mym-prod.imgix.net/images/photos/animals/225474/152452.jpg', '2018-04-20', 100);
-INSERT INTO Animal VALUES(3, 'cat', 'Rescuer','https://ospca-mym-prod.imgix.net/images/photos/animals/225560/152518.jpg', '2018-06-11', 100);
-INSERT INTO Animal VALUES(4, 'rabbit', 'AnotherRescuer','https://ospca-mym-prod.imgix.net/images/photos/animals/225227/151272.jpg', '2018-07-02', 80);
-INSERT INTO Animal VALUES(5, 'rabbit', 'Shelter', 'https://ospca-mym-prod.imgix.net/images/photos/animals/225695/152742.jpg', '2018-01-25', 80);
-INSERT INTO Animal VALUES(6, 'rodent', 'AnotherShelter','https://ospca-mym-prod.imgix.net/images/photos/animals/225694/152741.jpg', '2018-02-28', 110);
+INSERT INTO Animal VALUES('1', 'dog', 'PetsHome','https://ospca-mym-prod.imgix.net/images/photos/animals/225355/151387.jpg', '2018-03-30', 100);
+INSERT INTO Animal VALUES('2', 'cat', 'AnotherPetsHome','https://ospca-mym-prod.imgix.net/images/photos/animals/225474/152452.jpg', '2018-04-20', 100);
+INSERT INTO Animal VALUES('3', 'cat', 'Rescuer','https://ospca-mym-prod.imgix.net/images/photos/animals/225560/152518.jpg', '2018-06-11', 100);
+INSERT INTO Animal VALUES('4', 'rabbit', 'AnotherRescuer','https://ospca-mym-prod.imgix.net/images/photos/animals/225227/151272.jpg', '2018-07-02', 80);
+INSERT INTO Animal VALUES('5', 'rabbit', 'Shelter', 'https://ospca-mym-prod.imgix.net/images/photos/animals/225695/152742.jpg', '2018-01-25', 80);
+INSERT INTO Animal VALUES('6', 'rodent', 'AnotherShelter','https://ospca-mym-prod.imgix.net/images/photos/animals/225694/152741.jpg', '2018-02-28', 110);
 /*moneytransaction*/
-INSERT INTO moneytransaction VALUES(1, 'PetsHome', 'Wade', 2000, '2018-08-08', 'Donation');
-INSERT INTO moneytransaction VALUES(2, 'PetsHome', 'Rescuer', 100, '2018-08-09', 'Purchase');
-INSERT INTO moneytransaction VALUES(3, 'Shelter', 'Bosh', 100, '2018-08-09', 'Adoption');
+INSERT INTO `MoneyTransaction` (`payment_id`, `payee`, `payer`, `amount`, `dateOfTransaction`, `typeOfTransaction`) VALUES
+('1', 'AnotherRescuer', 'Tingzhou Jia', 1000, '2020-03-03 00:00:00', 'Donation'),
+('2', 'Rescuer', 'Tingzhou Jia', 500, '2020-03-03 00:00:00', 'Donation'),
+('3', 'AnotherPetsHome', 'Jarvis Xu', 1000, '2020-03-04 00:00:00', 'Donation'),
+('4', 'PetsHome', 'Shelter', 100, '2018-08-09 00:00:00', 'Purchase'),
+('5', 'AnotherPetsHome', 'AnotherShelter', 175, '2019-07-13 00:00:00', 'Purchase'),
+('6', 'PetsHome', 'Rescuer', 430, '2017-05-12 00:00:00', 'Purchase');
 /*movement*/
-INSERT INTO movement VALUE(2, 'Gasol', 'PetsHome', 'Rescuer', 3);
+INSERT INTO `Movement` VALUE('6', 'Gasol', 'PetsHome', 'Rescuer', 3);
+INSERT INTO `Movement`(`payment_id`, `driver`, `departure`, `destination`, `animal_id`) VALUES ('4','Butler','PetsHome','Shelter',2);
+INSERT INTO `Movement`(`payment_id`, `driver`, `departure`, `destination`, `animal_id`) VALUES ('5','Butler','AnotherPetsHome','AnotherShelter',5);
+
 /*vet_visit*/
 INSERT INTO vet_visit VALUES(000001, 1, 'Ginobili', 10, 'eat too much', '2018-04-10');
 INSERT INTO vet_visit VALUES(000002, 4, 'Nash', 9, 'leg injury', '2018-07-02');

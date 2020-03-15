@@ -7,11 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adopt</title>
     <?php include "../Config/otherConfig.php" ?>
-    
+    <?php include_once "../model/pdoMysql.class.php" ?>
 
     <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/adopt.css" />
 </head>
-
+<?php $yearChoice='2018';
+$rescued=$MyPDO::getAll("select COUNT(animal_id) as count from Animal where YEAR(origin_date) = '2018'")[0]
+?>
 <body>
     <?php include "navBar.php" ?>
     <section class="banner banner--image">
@@ -52,18 +54,24 @@
                             </a>
                         </picture>
                     </div><!-- /.tile -->
-
-                    <div class="tile">
-                        <h4 class="tile__title">
-                            <a href="adoptAnimal.php" class="tile__link">
-                                Manage Animals
-                            </a>
-                        </h4>
-                        <picture class="tile__picture">
-                            <a href="https://ontariospca.ca/adopt/meet-your-match/" class="tile__image-link">
-                                <img src="https://ontariospca.ca/wp-content/uploads/2019/03/GalleryImage-Meet-your-match-600x450-600x450-c-default.jpg" class="tile__img" alt="">
-                            </a>
-                        </picture>
+                    <?php 
+                    if(isset($_POST["rescueSelect"])){
+                        $yearChoice=$_POST["rescueSelect"];
+                        $rescued=$MyPDO::find("Animal","YEAR(origin_date) = '".$yearChoice."' ",array("COUNT(animal_id) as sum"))[0];
+                    }
+                    ?>
+                    <div class="tile" style="padding: 2vw">
+                        <form class="form-group row" action="#" method="post">
+                            <label>Our Total Rescued Animals In <?php echo $yearChoice; ?></label>
+                            <select class="custom-select" name="rescueSelect" style="margin-bottom: 1vw">
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                            </select>
+                            <input class="btn btn-primary mb-2" type="submit" value="filter" />
+                        </form>
+                        <p>We Rescued <?php echo isset($rescued["count"])?$rescued["count"]:0; ?> Animals In This Year!!!</p>
                     </div><!-- /.tile -->
 
                     

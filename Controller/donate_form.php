@@ -4,6 +4,7 @@ include "../model/pdoMysql.class.php";
 
 
 $transaction=array(
+    "payment_id"=>uniqid(),
     "payee"=>$_POST["branch_select"],
     "payer"=>$_POST["firstname"]." ".$_POST["lastname"],
     "amount"=>$_POST["other_val"],
