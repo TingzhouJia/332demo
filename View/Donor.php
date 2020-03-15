@@ -74,7 +74,7 @@ $res2=totalYearOne($specficBranch,2020)[0];
                 }
                 ?>
                 <div class="show_content">
-                    <h3>Money Donated In <?php echo isset($donation) ? $donation : date("Y"); ?></h3>
+                    <h3 style="flex:1;margin-right:1vw;">Money Donated In <?php echo isset($donation) ? $donation : date("Y"); ?></h3>
                     <div class="show_circle">
                         <?php echo $res["count"]; ?> Person-Times
                     </div>
@@ -83,6 +83,19 @@ $res2=totalYearOne($specficBranch,2020)[0];
                 </div>
 
             </div>
+            <?php
+                if (isset($_POST["yearDonateForBranch"])) {
+                    $specficBranch = $_POST["yearDonateForBranch"];
+                    if($_POST["yearDonateForYear"]==="no"){
+                         $yearbranch="2020";
+                         $res2 = totalYearOne($specficBranch,$yearbranch)[0];
+                        
+                    }else{
+                        $yearbranch=$_POST["yearDonateForYear"];
+                        $res2 = totalYearOne($specficBranch,$yearbranch)[0];
+                    }      
+                }
+                ?>
             <div class="show_list">
                 <form class="show_form2" name="show_form2" action="#" method="post"  onsubmit="return test2()">
                     <h3>Total Year Donation For <?php echo $specficBranch ?> </h3>
@@ -102,21 +115,9 @@ $res2=totalYearOne($specficBranch,2020)[0];
                     </select>
                     <input type="submit" class="btn-primary" value="filter"/>
                 </form>
-                <?php
-                if (isset($_POST["yearDonateForBranch"])) {
-                    $donationOneBranch = $_POST["yearDonateForBranch"];
-                    if($_POST["yearDonateForYear"]==="no"){
-                         $yearbranch="2020";
-                         $res2 = totalYearOne($donationOneBranch,$yearbranch)[0];
-                        
-                    }else{
-                        $yearbranch=$_POST["yearDonateForYear"];
-                        $res2 = totalYearOne($donationOneBranch,$yearbranch)[0];
-                    }      
-                }
-                ?>
+               
                 <div class="show_content">
-                    <h4>Money Donated For <?php echo $specficBranch;  ?> In <?php echo isset($yearbranch) ? $yearbranch : date("Y"); ?></h4>
+                    <h3 style="flex:1;margin-right:1vw;">Money Donated For <?php echo $specficBranch;  ?> In <?php echo isset($yearbranch) ? $yearbranch : date("Y"); ?></h3>
                     <div class="show_circle">
                         <?php echo isset($res2["count"])?$res2["count"]:0; ?> Person-Times
                     </div>
@@ -180,7 +181,23 @@ $res2=totalYearOne($specficBranch,2020)[0];
                     </tbody>
                 </table>
             </div>
-            <h2>Donor List</h2>
+            <?php
+                if(isset($_POST["DonateForSpecficBranch"])){
+                        $selecteBranch=$_POST["DonateForSpecficBranch"];
+                        $allDonor=findAllDonor($selecteBranch);
+                }
+            ?>
+            <h2 style="margin-top: 2vw">Donor List For <?php echo isset($selecteBranch)?$selecteBranch:"All"; ?></h2>
+            <form  class=" my-2 my-lg-0 form_donor" action="#" onsubmit="return test4()" method="post">
+            <select class="custom-select donor_select" name="DonateForSpecficBranch">
+                        <option value="all">All</option>
+                        <?php foreach($organization->organizationSelectList as $ele): ?>
+                            <option value=<?php echo $ele["name"]; ?> ><?php echo $ele["name"]; ?></option>
+                        <?php endforeach; ?>
+                       
+            </select>
+            <input type="submit" class="btn-primary" value="select" />
+            </form>
             <table class="table">
                 <thead>
                     <tr>
