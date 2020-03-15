@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="http://192.168.64.2/SPCA/css/home.css" />
 	<?php include "../Config/otherConfig.php" ?>
 	
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
 <body>
@@ -49,45 +48,8 @@
 	</section>
 
 	<!-- section who-we-are end -->
-	<section>
-	<?php
- 
- $dataPoints = array(
-	 array("label"=> "Food + Drinks", "y"=> 590),
-	 array("label"=> "Activities and Entertainments", "y"=> 261),
-	 array("label"=> "Health and Fitness", "y"=> 158),
-	 array("label"=> "Shopping & Misc", "y"=> 72),
-	 array("label"=> "Transportation", "y"=> 191),
-	 array("label"=> "Rent", "y"=> 573),
-	 array("label"=> "Travel Insurance", "y"=> 126)
- );
-	 
- ?>
-		<!-- show statistics -->
-		<div id="chartContainer" style="height: 370px; width: 370px;"></div>
-		<script>
-window.onload = function () {
- 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title:{
-		text: "Average Expense Per Day  in Thai Baht"
-	},
-	data: [{
-		type: "pie",
-		//showInLegend: "true",
-		//legendText: "{label}",
-		indexLabelFontSize: 16,
-		indexLabel: "{label} - #percent%",
-		yValueFormatString: "$#,##0",
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
- 
-}
-</script>
-	</section>
+
+
 	<section class="section section--events">
 		<?php include '../Controller/fetchAllOrganization.php'; ?>
 		<div class="events">

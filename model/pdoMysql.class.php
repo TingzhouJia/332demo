@@ -100,7 +100,26 @@ global $DB_CHARSET;
 		return self::getRow(sprintf($sql,self::parseFields($fields),$tabName,$priId));
 	}
 
+	public static  function beginTransaction()
+    {
+		
+        return self::$link->beginTransaction();
+    }
 
+    public static function inTransaction()
+    {
+        return self::$link->inTransaction();
+    }
+
+    public static function rollBack()
+    {
+        return self::$link->rollBack();
+    }
+
+    public static function commit()
+    {
+        return self::$link->commit();
+    }
 
 	/**
 	 * @param unknown $tables
@@ -150,6 +169,7 @@ global $DB_CHARSET;
 	 * @return Ambigous <boolean, unknown, number>
 	 */
 	public static function update($data,$table,$where=null,$order=null,$limit=0){
+		$sets="";
 		foreach($data as $key=>$val){
 			$sets.="`".$key."`='".$val."',";
 		}

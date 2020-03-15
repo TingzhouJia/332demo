@@ -5,12 +5,17 @@
     flex-direction: row;
 }
 .animal-profile__info{
+    display: flex;
     margin-left: 2vw;
+    
+    flex-direction: column;
+    
 }
-.animal-profile__info__top{
-    flex: 2;
-    margin-bottom: 2vw;
+.animal-profile__photos{
+    display: flex;
+   
 }
+
 .animal-profile__info__bottom{
     flex: 1;
    
@@ -23,13 +28,23 @@
    
    
 }
+.third_part{
+    padding: 2vw;
+    flex: 1;
+}
+
 .button-link{
     border: 1px solid #0076bb;
     box-shadow: 3px 3px #eeeeee;
     width: 15vw;
     text-align: center;
 }
-
+.animal-profile__info__bottom{
+    display: flex;
+    padding: 1vw;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 .adopt_form{
    display: none;
 }
@@ -38,6 +53,10 @@
     display: flex;
     flex-direction: column;
     
+
+}
+.button-link{
+    margin-right: 1vw;
 }
 .form_item{
     margin-bottom: 1vw;

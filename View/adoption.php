@@ -13,7 +13,8 @@
 </head>
 
 <?php
-$animalList = fetchAllAnimals();
+//
+$animalList =fetchAllAnimals();
 ?>
 
 
@@ -111,6 +112,9 @@ $animalList = fetchAllAnimals();
 
                                 </div>
                                 <div class="animal-list__content">
+                                    <?php if(sizeof($animalList)===0):?>
+                                        <div style="font-weight: 800;font-size:2rem">No Animal Available For Adopting</div>
+                                    <?php else: ?>
                                     <?php foreach ($animalList as $animalInfo) : ?>
                                         <div class="animal">
                                             <div class="animal__photo"><img width="300px" height="300px" src=<?php echo $animalInfo["profile"] ?> class="animal-photo__img"></div>
@@ -126,13 +130,14 @@ $animalList = fetchAllAnimals();
                                                     <!---->
                                                 </div>
                                                 <div class="animal__profile-link">
-                                                    <a href=<?php echo "adoptAnimal.php?" . $animalInfo["animal_id"]  ?> class="" target="_blank">
+                                                    <a href=<?php echo "adoptAnimal.php?id=" . $animalInfo["animal_id"]  ?> class="" target="_blank">
                                                         Meet »
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 

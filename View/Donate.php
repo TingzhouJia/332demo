@@ -139,40 +139,11 @@
 				</fieldset>
 				<input type="submit" class="btn-primary" value="submit" onclick="deny_submit()" />
 			</form>
-			<div class="payment_select">
-				<ul class="nav nav-tabs" id="myTab" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Credit Card</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bank Information</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Pay Pal</a>
-					</li>
+			
 
-				</ul>
-			</div>
+			
 
-			<div class="tab-content">
-				<div class="tab-pane active" id="home" class="credit" role="tabpanel" aria-labelledby="home-tab">
-					<h3>Credit Card Information:</h3>
-					<span>Credit Card Type:</span>
-
-					<label>Credit Card</label>
-					<input type="text" />
-					<img />
-				</div>
-				<div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-				<div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
-				<div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
-			</div>
-
-			<script>
-				jq(function() {
-					jq('#myTab li:last-child a').tab('show')
-				})
-			</script>
+			
 
 		</div>
 
