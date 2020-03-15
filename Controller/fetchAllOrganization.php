@@ -24,6 +24,8 @@ function fetchByType($type){
     global $MyPDO;
     return $MyPDO::find("Organization","typeOfOrganization = '".$type."'","name");
 }
+$sheterAndSpca=$MyPDO::getAll("select name from Organization where typeOfOrganization='shelter' or typeOfOrganization='SPCA'");
+
 //var_dump($organization->organizationSelectList) ;
 
 

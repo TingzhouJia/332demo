@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <?php include "../Config/otherConfig.php" ?>
+    <?php include_once "../Controller/adoptController.php"; ?>
+    <?php include_once "../Controller/fetchAllOrganization.php"; ?>
+    <?php include_once "../Config/otherConfig.php"; ?>
     <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/adoption.css" />
     <title>Document</title>
 </head>
+
+<?php
+$animalList = fetchAllAnimals();
+?>
+
+
+
 
 <body>
     <?php include "navBar.php" ?>
@@ -38,136 +46,100 @@
                         <p>View all cats, dogs and small animals available for adoption through your local Ontario SPCA animal centre below.</p>
                         <p><em>*Looking to adopt a working cat?&nbsp;<a href="https://ontariospca.ca/adopt/working-cat-program/">&nbsp;Click here</a>&nbsp;to learn more.</em></p>
                         <p><strong>The following adoption fees apply to Ontario SPCA animal centres:</strong></p>
-                        <p>Cat/Kitten: $175<br>
-                            Dog/Puppy: $450<br>
-                            Rabbit: Prices vary<br>
-                            Rodent: Prices vary<br>
-                            Guinea Pigs:&nbsp; $20<br>
+                        <p>Cat/Kitten:$100-$175<br>
+                            Dog/Puppy: $200-$450<br>
+                            Rabbit: $50-$80<br>
+                            Rodent: $20-$40<br>
+                            Guinea Pigs:&nbsp; Prices vary<br>
                             Bird: Prices vary</p>
                         <p><em>*View cost of care for <a href="https://ontariospca.ca/wp-content/uploads/2019/11/OSPCA_CostOfCaring_Dog_2020-nocrops.pdf" target="_blank" rel="noopener noreferrer">a dog</a> and cost of care for <a href="https://ontariospca.ca/wp-content/uploads/2019/11/OSPCA_CostOfCaring_Cat_2020-nocrops.pdf" target="_blank" rel="noopener noreferrer">a cat.</a></em></p>
                         <hr>
                         <div id="ospca-meet-your-match-app" class="ospca-mym">
                             <div class="ospca-mym-view">
                                 <div class="animal-list">
+                                    <?php
 
-                                    <form class="animal-filter__form">
-                                        <div class="animal-filter__form__file"><select>
-                                                <option value="">Species</option>
+                                    if (isset($_POST["speciesChoice"]) && isset($_POST["spcaChoice"]) && isset($_POST["yearChoice"]) ) {
+                                        $check= isset($_POST["checkChoice"])?$_POST["checkChoice"]:'';
+                                      
 
-                                                <option value="Cat">Cat</option>
-                                                <option value="Dog">Dog</option>
+                                        $animalList = fetchWithCondition(array(
+                                            $_POST["speciesChoice"], $_POST["yearChoice"], $_POST["spcaChoice"], $check
+                                        ));
+                                    }
 
-                                                <option value="Rabbit">Rabbit</option>
-                                                <option value="Rodent">Rodent</option>
+
+
+                                    ?>
+                                    <form class="animal-filter__form" name="filtercondition" method="post">
+                                        <div class="animal-filter__form__file">
+                                            <label>Species Choice</label>
+                                            <select name="speciesChoice" class="custom-select">
+                                                <option value="no">Pick A Species</option>
+                                                <option value="cat">Cat</option>
+                                                <option value="dog">Dog</option>
+                                                <option value="rabbit">Rabbit</option>
+                                                <option value="dodent">Rodent</option>
                                             </select></div>
-                                        <div class="animal-filter__form__file"><select>
-                                                <option value="">Gender</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Male">Male</option>
-                                            </select></div>
-                                        <div class="animal-filter__form__file"><select>
-                                                <option value="">Location</option>
 
-                                            </select></div>
-                                        <div class="animal-filter__form__file"><select>
-                                                <option value="">Rescue Year</option>
 
+                                        <div class="animal-filter__form__file">
+                                            <label>Year Choice</label>
+                                            <select class="custom-select" name="yearChoice">
+                                                <option value="no">Pick A Rescue Year</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
                                             </select></div>
-                                            <div class="animal-filter__form__file"><select>
-                                                <option value=""> From SPCA </option>
+                                        <div class="animal-filter__form__file">
+                                            <label>SPCA Choice</label>
+                                            <select class="custom-select" name="spcaChoice">
+                                                <option value="no"> Pick A SPCA </option>
+                                                <?php foreach ($sheterAndSpca as $ele) : ?>
+                                                    <option value=<?php echo $ele["name"] ?>><?php echo $ele["name"] ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                        <div class="animal-filter__form__file" style="display: flex;align-items:center;">
+                                            <input type="checkbox" name="checkChoice" value="join" />
+                                            <span> Animal went from the SPCA directly to a shelter</span>
+                                        </div>
 
-                                            </select></div>
+                                        <input class="btn-primary" type="submit" value="Filter" />
                                     </form>
 
                                 </div>
                                 <div class="animal-list__content">
-                                    <div class="animal">
-                                        <div class="animal__photo"><a href="#/animal/225371" class="" target="_blank"><img src="https://ospca-mym-prod.imgix.net/images/photos/animals/225371/151506.jpg?w=300&amp;h=330&amp;fit=crop&amp;crop=edge" class="animal-photo__img"></a></div>
-                                        <div class="animal__info">
-                                            <div>
-                                                <div class="animal__name">
-                                                    <!----> <span class="animal__info__value"> Butch</span></div>
-                                                <div class="animal__gender"><span class="animal__info__label">Gender</span> <span class="animal__info__value">Male</span></div>
-                                                <div class="animal__breed"><span class="animal__info__label">Breed</span> <span class="animal__info__value">Domestic Short Hair</span></div>
-                                                <div class="animal__age"><span class="animal__info__label">Age</span> <span class="animal__info__value">10 Months</span></div>
-                                                <div class="animal__suburb"><span class="animal__info__label">Location</span> <span class="animal__info__value">Brockville</span></div>
-                                                <div class="animal__id"><span class="animal__info__label">Animal ID</span> <span class="animal__info__value">225371</span></div>
-                                                <!---->
-                                            </div>
-                                            <div class="animal__profile-link"><a href="#/animal/225371" class="" target="_blank">
-                                                    Meet Butch »
-                                                </a></div>
-                                            </div>
-                                    </div>
-
-
-                                    <div class="animal">
-                                        <div class="animal__photo"><a href="#/animal/225141" class="" target="_blank"><img src="https://ospca-mym-prod.imgix.net/images/photos/animals/225141/150353.jpg?w=300&amp;h=330&amp;fit=crop&amp;crop=edge" class="animal-photo__img"></a></div>
-                                        <div class="animal__info">
-                                            <div>
-                                                <div class="animal__name">
-                                                    <!----> <span class="animal__info__value"> Donnie ( Adoption Pending)</span></div>
-                                                <div class="animal__gender"><span class="animal__info__label">Gender</span> <span class="animal__info__value">Male</span></div>
-                                                <div class="animal__breed"><span class="animal__info__label">Breed</span> <span class="animal__info__value">Siberian Husky</span></div>
-                                                <div class="animal__age"><span class="animal__info__label">Age</span> <span class="animal__info__value">1 Years</span></div>
-                                                <div class="animal__suburb"><span class="animal__info__label">Location</span> <span class="animal__info__value">Stouffville</span></div>
-                                                <div class="animal__id"><span class="animal__info__label">Animal ID</span> <span class="animal__info__value">225141</span></div>
-                                                <!---->
-                                            </div>
-                                            <div class="animal__profile-link"><a href="#/animal/225141" class="" target="_blank">
-                                                    Meet Donnie ( Adoption Pending) »
-                                                </a></div>
+                                    <?php foreach ($animalList as $animalInfo) : ?>
+                                        <div class="animal">
+                                            <div class="animal__photo"><img width="300px" height="300px" src=<?php echo $animalInfo["profile"] ?> class="animal-photo__img"></div>
+                                            <div class="animal__info">
+                                                <div>
+                                                    <div class="animal__name"><span class="animal__info__value"> <?php echo ucfirst($animalInfo["typeOfAnimal"]); ?></span></div>
+                                                    <div class="animal__gender"><span class="animal__info__label">Gender:</span> <span class="animal__info__value"><?php echo rand(0, 1) === 1 ? "Male" : "Female"; ?></span></div>
+                                                    <div class="animal__gender"><span class="animal__info__label">Rescuer Date:</span> <span class="animal__info__value"><?php echo date('Y-m-d',strtotime($animalInfo["origin_date"])); ?></span></div>
+                                                    <div class="animal__breed"><span class="animal__info__label">Price: $</span> <span class="animal__info__value"><?php echo $animalInfo["price"] ?></span></div>
+                                                    <div class="animal__age"><span class="animal__info__label">Age:</span> <span class="animal__info__value"><?php echo rand(1, 4) . "Year " . rand(1, 12) . "Months" ?></span></div>
+                                                    <div class="animal__suburb"><span class="animal__info__label">Location:</span> <span class="animal__info__value"><?php echo $animalInfo["location"]; ?></span></div>
+                                                    <div class="animal__id"><span class="animal__info__label">Animal ID:</span> <span class="animal__info__value"><?php echo $animalInfo["animal_id"]; ?></span></div>
+                                                    <!---->
                                                 </div>
-                                    </div>
-
-                                    <div class="animal">
-                                        <div class="animal__photo"><a href="#/animal/224654" class="" target="_blank"><img src="https://ospca-mym-prod.imgix.net/images/photos/animals/224654/147309.jpg?w=300&amp;h=330&amp;fit=crop&amp;crop=edge" class="animal-photo__img"></a></div>
-                                        <div class="animal__info">
-                                            <div>
-                                                <div class="animal__name">
-                                                    <!----> <span class="animal__info__value"> Indy (at Petsmart Aurora)</span></div>
-                                                <div class="animal__gender"><span class="animal__info__label">Gender</span> <span class="animal__info__value">Unknown</span></div>
-                                                <div class="animal__breed"><span class="animal__info__label">Breed</span> <span class="animal__info__value">Finch</span></div>
-                                                <div class="animal__age"><span class="animal__info__label">Age</span> <span class="animal__info__value">3 Months</span></div>
-                                                <div class="animal__suburb"><span class="animal__info__label">Location</span> <span class="animal__info__value">Stouffville</span></div>
-                                                <div class="animal__id"><span class="animal__info__label">Animal ID</span> <span class="animal__info__value">224654</span></div>
-                                                <!---->
+                                                <div class="animal__profile-link">
+                                                    <a href=<?php echo "adoptAnimal.php?" . $animalInfo["animal_id"]  ?> class="" target="_blank">
+                                                        Meet »
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div class="animal__profile-link"><a href="#/animal/224654" class="" target="_blank">
-                                                    Meet Indy (at Petsmart Aurora) »
-                                                </a></div>
-                                            <!---->
                                         </div>
-                                    </div>
-                                    <div class="animal">
-                                        <div class="animal__photo"><a href="#/animal/223796" class="" target="_blank"><img src="https://ospca-mym-prod.imgix.net/images/photos/animals/223796/142234.jpg?w=300&amp;h=330&amp;fit=crop&amp;crop=edge" class="animal-photo__img"></a></div>
-                                        <div class="animal__info">
-                                            <div>
-                                                <div class="animal__name">
-                                                    <!----> <span class="animal__info__value"> Chonky(gravenhurst Pet Valu)</span></div>
-                                                <div class="animal__gender"><span class="animal__info__label">Gender</span> <span class="animal__info__value">Male</span></div>
-                                                <div class="animal__breed"><span class="animal__info__label">Breed</span> <span class="animal__info__value">Abyssinian</span></div>
-                                                <div class="animal__age"><span class="animal__info__label">Age</span> <span class="animal__info__value">7 Months</span></div>
-                                                <div class="animal__suburb"><span class="animal__info__label">Location</span> <span class="animal__info__value">Bracebridge</span></div>
-                                                <div class="animal__id"><span class="animal__info__label">Animal ID</span> <span class="animal__info__value">223796</span></div>
-                                                <div class="northern-animal-indicator">
-                                                   
-                                            </div>
-                                            <div class="animal__profile-link"><a href="#/animal/223796" class="" target="_blank">
-                                                    Meet Chonky(gravenhurst Pet Valu) »
-                                                </a></div>
-                                            <!---->
-                                        </div>
-                                    </div>
-
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- /.page -->
+            </div><!-- /.page -->
     </main>
     <?php include "footer.php" ?>
 </body>

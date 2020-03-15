@@ -38,7 +38,7 @@
             <div class="page__body">
                 <p class="page_p" style="text-align: left;">If it’s time for a new pet in your life, you will surely find your perfect companion at an Ontario SPCA animal centre. There are so many wonderful pets throughout the province – cats and dogs of all ages, shapes, sizes and breeds, as well as birds, rabbits, guinea pigs and more – waiting, in hope, for a home; someone to share life with, someone to love.</p>
 
-                <div class="tile__wrapper">
+                <div class="tile__wrapper" style="margin-bottom: 5vw">
 
                     <div class="tile">
                         <h4 class="tile__title">
@@ -55,8 +55,8 @@
 
                     <div class="tile">
                         <h4 class="tile__title">
-                            <a href="https://ontariospca.ca/adopt/meet-your-match/" class="tile__link">
-                                Meet Your Match®
+                            <a href="adoptAnimal.php" class="tile__link">
+                                Manage Animals
                             </a>
                         </h4>
                         <picture class="tile__picture">
@@ -66,44 +66,7 @@
                         </picture>
                     </div><!-- /.tile -->
 
-                    <div class="tile">
-                        <h4 class="tile__title">
-                            <a href="https://ontariospca.ca/adopt/become-a-foster-family/" class="tile__link">
-                                Become a Foster Family
-                            </a>
-                        </h4>
-                        <picture class="tile__picture">
-                            <a href="https://ontariospca.ca/adopt/become-a-foster-family/" class="tile__image-link">
-                                <img src="https://ontariospca.ca/wp-content/uploads/2019/03/GalleryImage-Animal-care-600x450-600x450-c-default.jpg" class="tile__img" alt="">
-                            </a>
-                        </picture>
-                    </div><!-- /.tile -->
-
-                    <div class="tile">
-                        <h4 class="tile__title">
-                            <a href="https://ontariospca.ca/adopt/working-cat-program/" class="tile__link">
-                                Working Cat Program
-                            </a>
-                        </h4>
-                        <picture class="tile__picture">
-                            <a href="https://ontariospca.ca/adopt/working-cat-program/" class="tile__image-link">
-                                <img src="https://ontariospca.ca/wp-content/uploads/2019/03/GalleryImage-working-cats-600x450-600x450-c-default.jpg" class="tile__img" alt="">
-                            </a>
-                        </picture>
-                    </div><!-- /.tile -->
-
-                    <div class="tile">
-                        <h4 class="tile__title">
-                            <a href="https://ontariospca.ca/blog/tag/adoption/" class="tile__link">
-                                Happy Tails
-                            </a>
-                        </h4>
-                        <picture class="tile__picture">
-                            <a href="https://ontariospca.ca/blog/tag/adoption/" class="tile__image-link">
-                                <img src="https://ontariospca.ca/wp-content/uploads/2019/04/adopt-800x600-v2-600x450-600x450-c-default.jpg" class="tile__img" alt="">
-                            </a>
-                        </picture>
-                    </div><!-- /.tile -->
+                    
                 
             </div><!-- /.page__body -->
 
