@@ -100,6 +100,8 @@ global $DB_CHARSET;
 		return self::getRow(sprintf($sql,self::parseFields($fields),$tabName,$priId));
 	}
 
+
+
 	/**
 	 * @param unknown $tables
 	 * @param string $where

@@ -20,12 +20,12 @@ function findDonor($name){
        
 }
 //get donor for diff years
-function findAllDonor($year="all"){
+function findAllDonor($org="all"){
     global $MyPDO;
-    if($year==="all"){
+    if($org==="all"){
         return $MyPDO::find("MoneyTransaction",$GLOBALS['typeDonation']);
     }else{
-        return $MyPDO::find("MoneyTransaction","YEAR(dateOfTransaction) = ".$year." and ".$GLOBALS['typeDonation']);
+        return $MyPDO::find("MoneyTransaction","payee = '".$org."' and ".$GLOBALS['typeDonation']);
     }
 }
 //get namelist of payer
