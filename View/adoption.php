@@ -133,6 +133,7 @@ $animalList =fetchAllAnimals();
                                                     <a href=<?php echo "adoptAnimal.php?id=" . $animalInfo["animal_id"]  ?> class="" target="_blank">
                                                         Meet »
                                                     </a>
+                                                   
                                                 </div>
                                             </div>
                                         </div>

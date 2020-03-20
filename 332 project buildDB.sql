@@ -78,7 +78,7 @@ FOREIGN KEY (animal_id) REFERENCES Animal(animal_id) ON DELETE CASCADE
 );
 
 CREATE TABLE Vet_Visit ( 
-case_number INT AUTO_INCREMENT, 
+case_number VARCHAR(20) NOT NULL, 
 animal_id VARCHAR(20) NOT NULL, 
 vet_name VARCHAR(30) NOT NULL, 
 weight INT NOT NULL, 
