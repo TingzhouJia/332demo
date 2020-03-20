@@ -82,3 +82,8 @@ function AdoptAnAnimal($name,$address,$phone,$id,$value){
         
     }
 }
+
+function getVets($id){
+    global $MyPDO;
+    return $MyPDO::find("Vet_Visit","animal_id = '".$id."' ");
+}
