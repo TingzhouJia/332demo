@@ -138,6 +138,7 @@ $vetList=getVets($id);
                             </div>
                         </div>
                         <section class="adopt_form" id="adopt_select">
+                            <!-- form of moving animal -->
                             <h3 style="padding-left:1vw">Do You Want to Move Me to Another Location?</h3>
 
                             <form name="Move_form" class="form-group" action="#" method="post">
@@ -152,7 +153,7 @@ $vetList=getVets($id);
                                     </select>
 
                                 </div>
-
+                                <!-- pick a driver -->
                                 <div class="form-group col-md-6">
                                     <label>Pick A Driver You Want to Move</label>
                                     <select class="custom-select" style="margin-bottom: 2vw" name="driverChoice">
@@ -173,6 +174,7 @@ $vetList=getVets($id);
                             </form>
                         </section>
                         <section class="adopt_form" id="adopt_form">
+                            <!-- adoption animal form -->
                             <h3 style="font-weight: 700;padding-left:2vw;">The Adoption Form </h3>
                             <form class="adoptAnimal_form" name="AdoptForm" action="#" method="post">
                                 <div class="form_item">

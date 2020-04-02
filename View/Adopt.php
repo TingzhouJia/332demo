@@ -72,7 +72,7 @@ $rescued=$MyPDO::getAll("select COUNT(animal_id) as count from Animal where YEAR
                             <input class="btn btn-primary mb-2" type="submit" value="filter" />
                         </form>
                         <p>We Rescued <?php echo isset($rescued["count"])?$rescued["count"]:0; ?> Animals In This Year!!!</p>
-                    </div><!-- /.tile -->
+                    </div><!-- /.tile totoal rescued in each year -->
 
                     
                 

@@ -1,3 +1,7 @@
+---
+typora-root-url: ./img
+---
+
 #README
 
 ### CISC332 Project
@@ -111,3 +115,9 @@
 ​					)
 
 ​		
+<<<<<<< HEAD
+
+## User Guide
+
+=======
+>>>>>>> fa37ef59c6b96ea826a8b33587358dd0dd7c0ad7

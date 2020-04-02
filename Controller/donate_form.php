@@ -2,7 +2,7 @@
 include "../model/pdoMysql.class.php";
 
 
-
+//an transaction for donor
 $transaction=array(
     "payment_id"=>uniqid(),
     "payee"=>$_POST["branch_select"],

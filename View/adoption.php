@@ -72,6 +72,7 @@ $animalList =fetchAllAnimals();
 
 
                                     ?>
+                                    <!-- form for filter type year and location -->
                                     <form class="animal-filter__form" name="filtercondition" method="post">
                                         <div class="animal-filter__form__file">
                                             <label>Species Choice</label>
