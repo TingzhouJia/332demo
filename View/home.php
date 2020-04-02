@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Home</title>
-	<link rel="stylesheet" href="http://192.168.64.2/SPCA/css/home.css" />
+	<link rel="stylesheet" href="../css/home.css" />
 	<?php include "../Config/otherConfig.php" ?>
 	
 </head>

@@ -8,12 +8,12 @@
     <?php include_once "../Controller/adoptController.php"; ?>
     <?php include_once "../Controller/fetchAllOrganization.php"; ?>
     <?php include_once "../Config/otherConfig.php"; ?>
-    <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/adoption.css" />
+    <link rel="stylesheet" href="../css/adoption.css" />
     <title>Document</title>
 </head>
 
 <?php
-//
+
 $animalList =fetchAllAnimals();
 ?>
 

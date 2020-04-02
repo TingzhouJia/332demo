@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Donate</title>
-	<link rel="stylesheet" type="text/css" href="http://192.168.64.2/SPCA/css/donate.css" />
+	<link rel="stylesheet" type="text/css" href="../css/donate.css" />
 	<?php include "../Config/otherConfig.php" ?>
 	<?php include '../Controller/fetchAllOrganization.php'; ?>
 	<script>

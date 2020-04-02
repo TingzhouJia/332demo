@@ -8,7 +8,7 @@
     <?php include "../Config/otherConfig.php"; ?>
     <?php include "../Controller/fetchAllOrganization.php"; ?>
     <?php include '../Controller/Donation.php'; ?>
-    <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/donor.css" />
+    <link rel="stylesheet" href="../css/donor.css" />
 
     <title>Donor</title>
 </head>
