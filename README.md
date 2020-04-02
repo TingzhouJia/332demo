@@ -22,39 +22,39 @@
    
    ```
 
-   
+2. The images url for animals are fetched directly from real SPCA official webseit. Since there exists possibility that images url will be removed or revised, the images might not shown well during the running of project. You are welcome to revise the url of animal image for better user experience.
 
 ## Project Structure
 
-####	----Config
+###	----Config
 
 ##### This directory contains all the configuration file and header files for View layer
 
-####	----Controller
+###	----Controller
 
-#####This directory contains all  php files are used for CRUD in database, 
+##### This directory contains all  php files are used for CRUD in database, 
 
-####	----css
+###	----css
 
-#####This directory contains all stylesheet for View layer 
+##### This directory contains all stylesheet for View layer 
 
-####	----img
+###   ----img
 
-####	----js
+###   ----js
 
-####	----model
+###   ----model
 
-#####This directory encapsulates two php PDO, which can avoid redundant code and improve maintainability.
+##### This directory encapsulates two php PDO, which can avoid redundant code and improve maintainability.
 
-####	----vendor	
+###   ----vendor	
 
-####  ----View
+###   ----View
 
-#####				----Adopt.php 
+####     ----Adopt.php 
 
 ​			-----This page contains a function can search number of  rescued animal  in specific year.
 
-#####				----adoptAnimal.php
+#####    ----adoptAnimal.php
 
 ​			-----This page contains three functions ( 
 
@@ -66,7 +66,7 @@
 
 ​			)
 
-#####				----adoption.php
+####     ----adoption.php
 
 ​			-----This page contains four functions (
 
@@ -80,11 +80,11 @@
 
 ​	)
 
-#####				----Donate.php
+####     ----Donate.php
 
 ​			-----This page contains a function can donate for different SPCA.
 
-#####				----Donor.php
+####     ----Donor.php
 
 ​			-----This page is used for displaying donor for Ontario SPCA, this page contains three functions (
 
@@ -96,13 +96,13 @@
 
 ​		)
 
-#####				----home.php
+####     ----home.php
 
 ​			----This page contains SPCA organization information
 
-#####				----volunteer.php
+####     ----volunteer.php
 
-​			-----This page displays the volunteer information in all SPCA organization, it contains three functions 				 (
+​			-----This page displays the volunteer information in all SPCA organization, it contains three functions(
 
 ​					1. view volunteer as driver, employee, or owner
 
