@@ -1,6 +1,4 @@
----
-typora-root-url: ./img
----
+
 
 #README
 
@@ -119,5 +117,8 @@ typora-root-url: ./img
 
 ## User Guide
 
-=======
->>>>>>> fa37ef59c6b96ea826a8b33587358dd0dd7c0ad7
+### adoptAnimal Page
+![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal1.png)
+![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal2.png)
+![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal3.png)
+![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal4.png)
