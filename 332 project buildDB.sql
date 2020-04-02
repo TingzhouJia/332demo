@@ -1,9 +1,10 @@
-use 332Project;
+create database `332demo` default character set utf8 default collate utf8_bin;
+use 332demo;
 CREATE TABLE Organization ( 
 address VARCHAR(40) NOT NULL,
 phone_number VARCHAR(15) NOT NULL, 
 name VARCHAR(40) NOT NULL, 
-/*typeOfOrganization will demonstrate whether it is a rescue organization, shelter or SPCA*/
+
 typeOfOrganization VARCHAR(40) NOT NULL, 
 PRIMARY KEY(name)
 );
@@ -24,7 +25,7 @@ employee_name VARCHAR(20) NOT NULL,
 address VARCHAR(60) NOT NULL, 
 phone_number VARCHAR(15) NOT NULL, 
 location VARCHAR(40) NOT NULL,
-/*capacity will demonstrate whether this person is an employee or an owner*/ 
+
 capacity VARCHAR(40) NOT NULL, 
 PRIMARY KEY(employee_name), 
 FOREIGN KEY (location) REFERENCES Organization(name) ON DELETE CASCADE 
