@@ -1,10 +1,10 @@
 
 
-#README
+# README
 
 ### CISC332 Project
 
-#####Author:  Tingzhou Jia     Gexiao Xu
+##### Author:  Tingzhou Jia     Gexiao Xu
 
 
 
@@ -118,7 +118,37 @@
 ## User Guide
 
 ### adoptAnimal Page
+##### you are able to make three manipulation including adopt it, check health condition and move it from spca to shelter or rescue organization
 ![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal1.png)
+
 ![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal2.png)
 ![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal3.png)
+##### you are allowed to pick a specific driver to move animal 
 ![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal4.png)
+
+### adoption Page
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoption.png)
+##### you are allowed to filter the animal type, location for animal, year rescued of animal
+
+### donate Page
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/donate1.png)
+##### you can donate monthly 
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/donate2.png)
+##### you can choose how much you decided to donate
+
+### donor Page
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/donor1.png)
+##### you can filter donation for specific year, total year donation for specific spca, a donor's total money donated for specific year and its details.
+
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/donor2.png)
+##### you are able to filter the donation to specific organization
+
+### home Page
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/home1.png)
+##### there are three options for user, you can jump to volunteer page, adoption page, and donate page by clicking the yellow button
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/home2.png)
+##### There is a list of organizations of spca, and their details can be found by accessing ReadMore>>
+
+### volunteer Page
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/volunteer.png)
+##### this page shows the employee for different organization, and users are allowed to filter employee type and spca type by clicking the select
