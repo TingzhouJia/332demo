@@ -113,7 +113,6 @@
 ​					)
 
 ​		
-<<<<<<< HEAD
 
 ## User Guide
 
