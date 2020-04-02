@@ -1,14 +1,15 @@
--- /*organization*/
-INSERT INTO organization VALUES('101 Johnson St, Ottawa, ON', 6135833333, 'PetsHome', 'SPCA');
-INSERT INTO organization VALUES('250 Will St, Toronto, ON', 6135832500, 'AnotherPetsHome', 'SPCA');
-INSERT INTO organization VALUES('999 Duncan St, Ottawa, ON', 6134071234, 'Rescuer', 'rescue organization');
-INSERT INTO organization VALUES('365 Marquis St, Toronto, ON', 6134526597, 'AnotherRescuer', 'rescue organization');
-INSERT INTO organization VALUES('209 Dirk St, Ottawa, ON', 6132581314, 'Shelter', 'shelter');
-INSERT INTO organization VALUES('13 Bay St, Toronto, ON', 6134074190, 'AnotherShelter', 'shelter');
--- /*shelter*/
-INSERT INTO shelter VALUES('Shelter','www.shelter.com',10,10,10,10);
-INSERT INTO shelter VALUES('AnotherShelter','www.anothershelter.com',15,15,15,15);
--- /*employee*/
+use 332demo;
+-- organization
+INSERT INTO Organization VALUES('101 Johnson St, Ottawa, ON', 6135833333, 'PetsHome', 'SPCA');
+INSERT INTO Organization VALUES('250 Will St, Toronto, ON', 6135832500, 'AnotherPetsHome', 'SPCA');
+INSERT INTO Organization VALUES('999 Duncan St, Ottawa, ON', 6134071234, 'Rescuer', 'rescue organization');
+INSERT INTO Organization VALUES('365 Marquis St, Toronto, ON', 6134526597, 'AnotherRescuer', 'rescue organization');
+INSERT INTO Organization VALUES('209 Dirk St, Ottawa, ON', 6132581314, 'Shelter', 'shelter');
+INSERT INTO Organization VALUES('13 Bay St, Toronto, ON', 6134074190, 'AnotherShelter', 'shelter');
+-- shelter
+INSERT INTO Shelter VALUES('Shelter','www.shelter.com',10,10,10,10);
+INSERT INTO Shelter VALUES('AnotherShelter','www.anothershelter.com',15,15,15,15);
+-- employee
 INSERT INTO Employee VALUES('Kid', '101 Will St, Ottawa', 6136136133, 'PetsHome', 'employee');
 INSERT INTO Employee VALUES('David', '330 Division St, Ottawa', 6135834321, 'PetsHome', 'owner');
 INSERT INTO Employee VALUES('Allen', '852 Heaven St, Toronto', 6135288516, 'AnotherPetsHome', 'employee');
@@ -41,12 +42,12 @@ INSERT INTO `MoneyTransaction` (`payment_id`, `payee`, `payer`, `amount`, `dateO
 ('4', 'PetsHome', 'Shelter', 100, '2018-08-09 00:00:00', 'Purchase'),
 ('5', 'AnotherPetsHome', 'AnotherShelter', 175, '2019-07-13 00:00:00', 'Purchase'),
 ('6', 'PetsHome', 'Rescuer', 430, '2017-05-12 00:00:00', 'Purchase');
-/*movement*/
+
 INSERT INTO `Movement` VALUE('6', 'Gasol', 'PetsHome', 'Rescuer', 3);
 INSERT INTO `Movement`(`payment_id`, `driver`, `departure`, `destination`, `animal_id`) VALUES ('4','Butler','PetsHome','Shelter',2);
 INSERT INTO `Movement`(`payment_id`, `driver`, `departure`, `destination`, `animal_id`) VALUES ('5','Butler','AnotherPetsHome','AnotherShelter',5);
 
-/*vet_visit*/
+
 INSERT INTO Vet_Visit VALUES(000001, 1, 'Ginobili', 10, 'eat too much', '2018-04-10');
 INSERT INTO Vet_Visit VALUES(000002, 1, 'Nash', 9, 'leg injury', '2018-07-02');
 INSERT INTO Vet_Visit VALUES(000003, 1, 'Ginobili', 10, 'eat too much', '2018-04-10');
@@ -54,16 +55,13 @@ INSERT INTO Vet_Visit VALUES(000004, 2, 'Nash', 9, 'good condition', '2018-07-02
 INSERT INTO Vet_Visit VALUES(000005, 2, 'Ginobili', 10, 'eat too much', '2018-07-12');
 INSERT INTO Vet_Visit VALUES(000006, 3, 'Nash', 9, 'leg injury', '2018-07-02');
 INSERT INTO Vet_Visit VALUES(0000011, 3, 'Nash', 9, 'leg injury', '2018-08-02');
-INSERT INTO Vet_Visit VALUES(0000012, 3, 'Nash', 9, 'leg recovered', '2018-09-02');
 INSERT INTO Vet_Visit VALUES(000007, 4, 'Ginobili', 10, 'eat too much', '2018-06-15');
 INSERT INTO Vet_Visit VALUES(000008, 4, 'Nash', 9, 'leg injury', '2018-07-02');
 INSERT INTO Vet_Visit VALUES(000009, 5, 'Ginobili', 10, 'good conditon', '2018-04-10');
-INSERT INTO Vet_Visit VALUES(0000011, 5, 'Json', 10, 'eat too much', '2018-05-10');
 INSERT INTO Vet_Visit VALUES(0000012, 5, 'Ginobili', 10, 'good condition', '2018-06-10');
 INSERT INTO Vet_Visit VALUES(0000013, 6, 'Ginobili', 10, 'eat too much', '2018-04-10');
 INSERT INTO Vet_Visit VALUES(0000014, 6, 'Ginobili', 10, 'eat too much', '2018-04-10');
 INSERT INTO Vet_Visit VALUES(0000015, 6, 'Ginobili', 10, 'eat too much', '2018-04-10');
 INSERT INTO Vet_Visit VALUES(0000010, 4, 'Nash', 9, 'leg injury', '2018-07-02');
-/*adoptedlist*/
--- INSERT INTO adoptedlist VALUE('Bosh', '4 Heat St, Ottawa', 1984324444, 5, 3);
+
 
