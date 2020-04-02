@@ -118,7 +118,7 @@
 ## User Guide
 
 ### adoptAnimal Page
-![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal1.png)
-![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal2.png)
-![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal3.png)
-![image](https://github.com/TingzhouJia/332demo/tree/master/img/adoptAnimal4.png)
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal1.png)
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal2.png)
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal3.png)
+![image](https://github.com/TingzhouJia/332demo/raw/master/img/adoptAnimal4.png)
