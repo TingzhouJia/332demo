@@ -2,24 +2,27 @@
 
 include_once "../model/pdoMysql.class.php";
 
+//This is the function for fetch all animal
 function fetchAllAnimals(){
     global $MyPDO;
     return $MyPDO::getAll("select * from Animal");
 }
 
+//fetch animal according to id
 function specificOne($id){
     global $MyPDO;
     return $MyPDO::getAll("select * from (select * from Animal where animal_id= '".$id."') as a join (select * from Organization) as o on a.location=o.name ");
     
 }
 
-
+//fetch animal accoring to type,year,and location
 function fetchWithCondition($conditions){
     global $MyPDO;
     if(is_array($conditions)){
         $condition1=$conditions[0]!=="no"?" typeOfAnimal='".$conditions[0]."' ":" 1 ";
         $condition2=$conditions[1]!=="no"?" YEAR(origin_date)='".$conditions[1]."' ":"  1 ";
         $condition3=$conditions[2]!=="no"?" location='".$conditions[2]."' ":" 1 ";
+        //this sql is prepared for fetch animal directly from spca
         $sql="(SELECT animal_id FROM `Movement` as a join 
         (SELECT name, typeOfOrganization from `Organization`) as b on a.departure=b.name and b.typeOfOrganization='SPCA' join 
         (SELECT name, typeOfOrganization from `Organization`) as c on a.destination=c.name and c.typeOfOrganization='shelter') as e";
@@ -37,6 +40,7 @@ function fetchWithCondition($conditions){
     }
 }
 
+//this is sql for moving animal
 function MoveAnAnimal($driver,$location,$animal_id){
     global $MyPDO;
     $animalinfo=$MyPDO::getAll("select location, animal_id from Animal where animal_id= '".$animal_id."'");
@@ -59,7 +63,7 @@ function MoveAnAnimal($driver,$location,$animal_id){
         
     }
 }
-
+//this is function adopt animal and delete animal and vet visit cascade
 function AdoptAnAnimal($name,$address,$phone,$id,$value){
     global $MyPDO;
     $animalinfo=$MyPDO::getAll("select location, animal_id from Animal where animal_id= '".$id."'");
@@ -82,7 +86,7 @@ function AdoptAnAnimal($name,$address,$phone,$id,$value){
         
     }
 }
-
+//get vets visit list
 function getVets($id){
     global $MyPDO;
     return $MyPDO::find("Vet_Visit","animal_id = '".$id."' ");

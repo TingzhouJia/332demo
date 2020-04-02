@@ -4,6 +4,7 @@ require_once "../model/pdoMysql.class.php";
 
 $typeDonation="typeOfTransaction = 'Donation'";
 
+//find amount donated in specfic year
 function findDonorYear($year){
     global $MyPDO;
 

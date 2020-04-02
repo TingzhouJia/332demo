@@ -1,5 +1,6 @@
 <?php
 include_once "../model/pdoMysql.class.php";
+//select employee according to their position and location
 function getEmployee($type="no",$place="no"){
     global $MyPDO;
     if($type==="no"){
