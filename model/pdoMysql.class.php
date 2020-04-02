@@ -20,6 +20,7 @@ class PdoMySQL{
 	/**
 	 * @param string $dbConfig
 	 * @return boolean
+	 * initialization of custom pdo
 	 */
 	public function __construct($dbConfig=''){
 		global $DB_HOST;
@@ -53,6 +54,7 @@ global $DB_CHARSET;
 				$configs['params'][constant("PDO::ATTR_PERSISTENT")]=true;
 			}
 			try{
+				//connect with setting
 				self::$link=new PDO($configs['dsn'],$configs['username'],$configs['password'],$configs['params']);
 			}catch(PDOException $e){
 				self::throw_exception($e->getMessage());
@@ -68,6 +70,7 @@ global $DB_CHARSET;
 	}
 
 	/**
+	 * fetch all by single query,still prepared for avoiding injection
 	 * @param string $sql
 	 * @return unknown
 	 */
@@ -81,6 +84,7 @@ global $DB_CHARSET;
 	/**
 	 * @param string $sql
 	 * @return mixed
+	 * get specific row 
 	 */
 	public static function getRow($sql=null){
 		if($sql!=null){
@@ -94,28 +98,30 @@ global $DB_CHARSET;
 	 * @param int $priId
 	 * @param string $fields
 	 * @return mixed
+	 * find by id
 	 */
 	public static function findById($tabName,$priId,$fields='*'){
 		$sql='SELECT %s FROM %s WHERE id=%d';
 		return self::getRow(sprintf($sql,self::parseFields($fields),$tabName,$priId));
 	}
 
+	//transaction setup
 	public static  function beginTransaction()
     {
 		
         return self::$link->beginTransaction();
     }
-
+	//during transaction
     public static function inTransaction()
     {
         return self::$link->inTransaction();
     }
-
+	//rollback when failed
     public static function rollBack()
     {
         return self::$link->rollBack();
     }
-
+	//commit query
     public static function commit()
     {
         return self::$link->commit();
@@ -148,6 +154,7 @@ global $DB_CHARSET;
 	 * @param array $data
 	 * @param string $table
 	 * @return Ambigous <boolean, unknown, number>
+	 * insert value
 	 */
 	public static function add($data,$table){
 		$keys=array_keys($data);
@@ -167,6 +174,7 @@ global $DB_CHARSET;
 	 * @param string $order
 	 * @param string $limit
 	 * @return Ambigous <boolean, unknown, number>
+	 * update according diff condition
 	 */
 	public static function update($data,$table,$where=null,$order=null,$limit=0){
 		$sets="";
@@ -185,13 +193,14 @@ global $DB_CHARSET;
 	 * @param string $order
 	 * @param number $limit
 	 * @return Ambigous <boolean, unknown, number>
+	 * delete by comndition 
 	 */
 	public static function delete($table,$where=null,$order=null,$limit=0){
 		$sql="DELETE FROM `{$table}` ".self::parseWhere($where).self::parseOrder($order).self::parseLimit($limit);
 		return self::execute($sql);
 	}
 
-
+	//change table
 	public static function truncate($table){
 		$sql="TRUNCATE TABLE `{$table}` ";
 		return self::execute($sql);
@@ -210,6 +219,7 @@ global $DB_CHARSET;
 		return $tables;
 	}
 	
+	//a string of where condition since there are some sql function used after where condition
 	public static function parseWhere($where){
 		$whereStr='';
 		if(is_string($where)&&!empty($where)){
@@ -221,13 +231,14 @@ global $DB_CHARSET;
 	public static function parseGroup($group){
 		$groupStr='';
 		if(is_array($group)){
+			//seperate content if array
 			$groupStr.=' GROUP BY '.implode(',',$group);
 		}elseif(is_string($group)&&!empty($group)){
 			$groupStr.=' GROUP BY '.$group;
 		}
 		return empty($groupStr)?'':$groupStr;
 	}
-
+	//parse having
 	public static function parseHaving($having){
 		$havingStr='';
 		if(is_string($having)&&!empty($having)){
@@ -235,7 +246,7 @@ global $DB_CHARSET;
 		}
 		return $havingStr;
 	}
-
+	//parse orderby
 	public static function parseOrder($order){
 		$orderStr='';
 		if(is_array($order)){
@@ -302,10 +313,11 @@ global $DB_CHARSET;
 			return false;
 		}
 	}
-	
+	//free pdo
 	public static function free(){
 		self::$PDOStatement=null;
 	}
+	//every sql should be prepared in order to avoid injection
 	public static function query($sql=''){
 		$link=self::$link;
 		if(!$link) return false;
@@ -317,6 +329,7 @@ global $DB_CHARSET;
 		self::haveErrorThrowException();
 		return $res;
 	}
+	//error handling
 	public static function haveErrorThrowException(){
 		$obj=empty(self::$PDOStatement)?self::$link: self::$PDOStatement;
 		$arrError=$obj->errorInfo();

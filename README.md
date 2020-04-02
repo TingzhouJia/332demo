@@ -115,9 +115,6 @@ typora-root-url: ./img
 ​					)
 
 ​		
-<<<<<<< HEAD
 
 ## User Guide
 
-=======
->>>>>>> fa37ef59c6b96ea826a8b33587358dd0dd7c0ad7
