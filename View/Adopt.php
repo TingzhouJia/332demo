@@ -9,7 +9,7 @@
     <?php include "../Config/otherConfig.php" ?>
     <?php include_once "../model/pdoMysql.class.php" ?>
 
-    <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/adopt.css" />
+    <link rel="stylesheet" href="../css/adopt.css" />
 </head>
 <?php $yearChoice='2018';
 $rescued=$MyPDO::getAll("select COUNT(animal_id) as count from Animal where YEAR(origin_date) = '2018'")[0]

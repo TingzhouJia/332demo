@@ -1,4 +1,4 @@
-<?
+<?php
 include_once "../model/pdoMysql.class.php";
 function getEmployee($type="no",$place="no"){
     global $MyPDO;

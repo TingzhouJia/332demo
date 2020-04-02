@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<link rel="stylesheet" href="http://192.168.64.2/SPCA/css/nav.css">
+	<link rel="stylesheet" href="../css/nav.css">
 	<?php include "../Config/otherConfig.php" ?>
 </head>
 

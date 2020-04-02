@@ -1,6 +1,7 @@
 <html lang="en">
-
+<?php $host=$_SERVER['HTTP_HOST'];?>
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,15 +9,15 @@
     <?php include_once "../Config/otherConfig.php"; ?>
     <?php include_once "../Controller/fetchAllOrganization.php"; ?>
     <?php include_once "../Controller/volunteerController.php"; ?>
-    <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/adoption.css" />
-    <link rel="stylesheet" href="http://192.168.64.2/SPCA/css/adoptAnimal.css" />
+    <link rel="stylesheet" href="../css/adoption.css" />
+    
+    <link rel="stylesheet" href="../css/adoptAnimal.css" />
 
     <title>Document</title>
 </head>
 <?php
 
 $id = $_GET["id"];
-
 $dirverList = getEmployee("driver");
 $animalInfo = specificOne($id)[0];
 $vetList=getVets($id);
