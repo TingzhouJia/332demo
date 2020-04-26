@@ -1,10 +1,13 @@
 
 
-# README
+# CISC332 Demo
 
-### CISC332 Project
+### Technology Stack
+- PHP
 
-##### Author:  Tingzhou Jia     Gexiao Xu
+##### Author:  
+- [Tingzhou Jia](https://github.com/TingzhouJia)    
+- [Gexiao Xu](https://github.com/JarvisGexiaoXu)
 
 
 
@@ -26,7 +29,9 @@
 
 2. The images url for animals are fetched directly from real SPCA official webseit. Since there exists possibility that images url will be removed or revised, the images might not shown well during the running of project. You are welcome to revise the url of animal image for better user experience.
 
+
 ## Project Structure
+
 
 ###	----Config
 
